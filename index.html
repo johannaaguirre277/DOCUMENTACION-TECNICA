@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentación Técnica de CSS Responsivo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav id="navbar">
+    <header>Documentación CSS Responsivo</header>
+    <a class="nav-link" href="#Introduccion_al_Diseno_Responsivo">Introduccion al Diseno Responsivo</a>
+    <a class="nav-link" href="#Unidades_Relativas">Unidades Relativas</a>
+    <a class="nav-link" href="#Media_Queries">Media Queries</a>
+    <a class="nav-link" href="#Imagenes_Flexibles">Imagenes Flexibles</a>
+    <a class="nav-link" href="#Enfoque_Mobile_First">Enfoque Mobile First</a>
+  </nav>
+
+  <main id="main-doc">
+    <section class="main-section" id="Introduccion_al_Diseno_Responsivo">
+      <header>Introduccion al Diseno Responsivo</header>
+      <p>
+        El diseño web responsivo permite que una misma página se adapte de forma fluida a distintos tamaños de pantalla, desde teléfonos móviles hasta monitores de escritorio.
+      </p>
+      <p>
+        Para lograrlo correctamente, es indispensable incluir la etiqueta meta viewport en la cabecera del documento HTML para controlar el escalado inicial.
+      </p>
+      <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</code>
+      <ul>
+        <li>Mejora la experiencia de lectura en dispositivos móviles y tabletas.</li>
+        <li>Evita el desplazamiento horizontal innecesario en pantallas pequeñas.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Unidades_Relativas">
+      <header>Unidades Relativas</header>
+      <p>
+        A diferencia de los píxeles fijos, las unidades relativas calculan su tamaño en función de otro valor, como el contenedor padre o el tamaño de fuente raíz.
+      </p>
+      <p>
+        Usar unidades como porcentajes, rem y vw ayuda a que la tipografía y los bloques de contenido escalen proporcionalmente.
+      </p>
+      <code>.contenedor { width: 90%; font-size: 1.125rem; }</code>
+      <ul>
+        <li><strong>%</strong>: Relativo al tamaño del elemento padre.</li>
+        <li><strong>rem</strong>: Relativo al tamaño de fuente del elemento raíz html.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Media_Queries">
+      <header>Media Queries</header>
+      <p>
+        Las media queries permiten aplicar reglas CSS únicamente cuando se cumplen ciertas condiciones del dispositivo, como el ancho de la ventana o la orientación.
+      </p>
+      <p>
+        Se pueden combinar múltiples características de media utilizando operadores lógicos como and.
+      </p>
+      <code>@media screen and (min-width: 768px) { body { font-size: 18px; } }</code>
+      <ul>
+        <li><code>min-width</code> y <code>max-width</code> evalúan el ancho de la ventana gráfica.</li>
+        <li><code>orientation</code> detecta si la pantalla está en modo portrait o landscape.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Imagenes_Flexibles">
+      <header>Imagenes Flexibles</header>
+      <p>
+        Las imágenes con dimensiones fijas pueden desbordar sus contenedores en pantallas estrechas si no se restringe su ancho máximo.
+      </p>
+      <p>
+        Configurar el ancho máximo al cien por ciento y la altura automática garantiza que la imagen conserve su relación de aspecto original.
+      </p>
+      <code>img { max-width: 100%; height: auto; display: block; }</code>
+      <ul>
+        <li>Evita la distorsión visual al redimensionar la ventana del navegador.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Enfoque_Mobile_First">
+      <header>Enfoque Mobile First</header>
+      <p>
+        El enfoque móvil-prioritario consiste en escribir primero los estilos base pensando en pantallas pequeñas y luego expandir el diseño hacia pantallas más grandes.
+      </p>
+      <p>
+        Esta metodología utiliza consultas con min-width para agregar columnas, márgenes amplios y barras laterales en tabletas y computadoras de escritorio.
+      </p>
+      <code>@media (min-width: 1024px) { .grid { display: grid; grid-template-columns: 1fr 3fr; } }</code>
+      <ul>
+        <li>Prioriza el contenido esencial y mantiene un CSS más limpio y escalable.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
